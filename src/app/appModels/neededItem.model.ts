@@ -1,5 +1,5 @@
 export class NeededItem{
-    id?: string;
+    id?: number;
     name?: string;
     quantity?: number;
 } 

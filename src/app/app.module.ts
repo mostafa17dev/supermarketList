@@ -23,7 +23,7 @@ import { FormsModule } from '@angular/forms';
     NgbModule.forRoot(),
     FormsModule,
   ],
-  providers: [NeededItemService,BoughtItemService],
+  providers: [NeededItemService,BoughtItemService,NeededItemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
