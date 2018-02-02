@@ -1,6 +1,7 @@
+import { NeededInputModalService } from './../services/needed-input-modal.service';
 import { NeededItem } from './../appModels/neededItem.model';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -8,24 +9,17 @@ import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './needed-input-modal.component.html',
   styleUrls: ['./needed-input-modal.component.css']
 })
-export class NeededInputModalComponent implements OnInit {
+export class NeededInputModalComponent  {
   neededItem: NeededItem = {};
-
-  constructor(public activeModal: NgbActiveModal) { }
-
-  ngOnInit() {
-  }
-
-  saveItem(){
-    console.log(this.neededItem);
-    if(this.neededItem.name != null && this.neededItem.quantity != null){
-      this.activeModal.close();
-    }
-  }
-
-  sendNeededItem(){
-
-  }
   
+  constructor(public activeModal: NgbActiveModal, public neededInputModalSercive: NeededInputModalService) { }
+  
+  // send needed item object to parent component
+  sendNeededItem(){ 
+    if(this.neededItem.name != null && this.neededItem.quantity != null){ // check if the user entered name and quantity
+      this.neededInputModalSercive.neededInputChange.emit(this.neededItem);
+      this.activeModal.close(); //close modal
+    }
+  } 
 
 }

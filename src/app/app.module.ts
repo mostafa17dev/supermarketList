@@ -1,3 +1,4 @@
+import { NeededInputModalService } from './services/needed-input-modal.service';
 import { NeededItemService } from './services/needed-item.service';
 import { BoughtItemService } from './services/bought-item.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,7 +24,7 @@ import { FormsModule } from '@angular/forms';
     NgbModule.forRoot(),
     FormsModule,
   ],
-  providers: [NeededItemService,BoughtItemService,NeededItemService],
+  providers: [NeededItemService,BoughtItemService,NeededItemService,NeededInputModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
