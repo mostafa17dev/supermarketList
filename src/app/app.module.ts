@@ -1,18 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppComponent } from './app.component';
-import { MaterialM } from './material';
+import { NeededInputModalComponent } from './needed-input-modal/needed-input-modal.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NeededInputModalComponent
+  ],
+  entryComponents: [
+    NeededInputModalComponent,
   ],
   imports: [
     BrowserModule,
-    MaterialM,
+    NgbModule.forRoot(),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

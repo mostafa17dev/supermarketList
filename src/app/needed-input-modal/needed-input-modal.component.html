@@ -1,0 +1,23 @@
+<div class="modal-header">
+  <h4 class="modal-title">Add Item</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form>
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="itemName">Name</label>
+      <input [(ngModel)]="neededItem.name" type="text" class="form-control" id="itemName" aria-describedby="itemName" placeholder="Enter item name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="itemQuantity">Quantity</label>
+      <input [(ngModel)]="neededItem.quantity" type="number" class="form-control" id="itemQuantity" placeholder="Enter item quantity" name="quantity" required>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="saveItem()">save</button>
+    <button type="button" class="btn btn-danger" (click)="activeModal.close('Close click')">cancel</button>
+  </div>  
+</form>
+

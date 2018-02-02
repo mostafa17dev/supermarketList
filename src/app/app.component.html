@@ -1,59 +1,68 @@
-<header>
-  <h1>Supermarket List</h1>
-</header>
+  <header>
+    <h1>Supermarket List</h1>
+  </header>
 
-<div class="supermarketList">
+
   <div class="container">
-      <mat-grid-list cols="2" >
-          <mat-grid-tile class="needed">            
-              <mat-list>
-                  <h3 mat-subheader>Needed</h3>
-                  <mat-list-item *ngFor="let folder of folders">
-                    <mat-icon mat-list-icon>folder</mat-icon>
-                    <h4 mat-line>{{folder.name}}</h4>
-                    <p mat-line> {{folder.updated | date}} </p>
-                  </mat-list-item>
-                  <mat-divider></mat-divider>
-                  <h3 mat-subheader>Notes</h3>
-                  <mat-list-item *ngFor="let note of notes">
-                    <mat-icon mat-list-icon>note</mat-icon>
-                    <h4 mat-line>{{note.name}}</h4>
-                    <p mat-line> {{note.updated | date}} </p>
-                  </mat-list-item>
-                </mat-list>
-          </mat-grid-tile>
-          <mat-grid-tile class="bought">
-             
-              <mat-table #table [dataSource]="dataSource">
-
-                  <!--- Note that these columns can be defined in any order.
-                        The actual rendered columns are set as a property on the row definition" -->
-              
-                  <!-- Position Column -->
-                  <ng-container matColumnDef="position">
-                    <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-                    <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
-                  </ng-container>
-              
-                  <!-- Name Column -->
-                  <ng-container matColumnDef="name">
-                    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-                    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-                  </ng-container>
-              
-                 
-              
-                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-                </mat-table>
-            
-          </mat-grid-tile>
-        </mat-grid-list>
-    <div class="needed">
-
-    </div>
-    <div class="bought">
-      
+   <div class="supermarketList">
+      <div class="row">
+        <div class="col-md-6 needed">
+          <h2>Needed</h2>
+          <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Items</th>
+                  <th scope="col">Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Butter</th>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <th scope="row">Bread</th>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <th scope="row">Water</th>
+                  <td>3</td>
+                </tr>
+              </tbody>
+          </table>
+          <button (click)="openNeededInputModal()">+</button>
+        </div>
+        <div class="col-md-6 bought">
+          <div class="bought">
+            <h2>Bought</h2>
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Items</th>
+                  <th scope="col">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Apples</th>
+                  <td>35</td>
+                </tr>
+                <tr>
+                  <th scope="row">Toilet paper</th>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Larry</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+         
+  <hr>
+   
+  <pre>{{closeResult}}</pre>
+      </div>
     </div>
   </div>
-</div>
