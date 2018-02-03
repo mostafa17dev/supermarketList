@@ -1,0 +1,20 @@
+<div class="modal-header">
+  <h4 class="modal-title">Add one Item price</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form>
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="itemPrice">Price</label>
+      <input [(ngModel)]="price" type="number" class="form-control" id="itemPrice" placeholder="Enter item Price" name="price" required>
+    </div>
+    <span class="error"><small>{{errorMessage}}</small></span>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="sendPrice()">save</button>
+    <button type="button" class="btn btn-danger" (click)="activeModal.close('Close click')">cancel</button>
+  </div>  
+</form>
+

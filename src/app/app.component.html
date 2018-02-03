@@ -16,11 +16,11 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">Butter</th>
-                  <td>1</td>
+                <tr *ngFor="let neededItem of neededItems" class="draggable" [draggable] [dragData]="neededItem">
+                  <th scope="row">{{neededItem.name}}</th>
+                  <td>{{neededItem.quantity}}</td>
                 </tr>
-                <tr>
+                <tr >
                   <th scope="row">Bread</th>
                   <td>2</td>
                 </tr>
@@ -42,27 +42,23 @@
                   <th scope="col">Price</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Apples</th>
-                  <td>35</td>
+              <tbody droppable (onDrop)="onItemsDrop($event)">
+                <tr *ngFor="let boughtItem of boughtItems">
+                  <th scope="row">{{boughtItem.name}}</th>
+                  <td>{{boughtItem.totalPrice}}</td>
                 </tr>
                 <tr>
                   <th scope="row">Toilet paper</th>
                   <td>20</td>
                 </tr>
-                <tr>
+                <tr >
                   <th scope="row">3</th>
                   <td>Larry</td>
                 </tr>
               </tbody>
             </table>
           </div>
-        </div>
-         
-  <hr>
-   
-  <pre>{{closeResult}}</pre>
+        </div>   
       </div>
     </div>
   </div>

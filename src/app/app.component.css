@@ -16,6 +16,10 @@ header h1{
     text-align: center;
 }
 
+.supermarketList .needed .draggable{
+    cursor: move;
+}
+
 .supermarketList .needed button{
     float: right;
     margin-bottom: 10px;

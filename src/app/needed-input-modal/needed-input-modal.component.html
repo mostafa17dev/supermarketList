@@ -14,6 +14,7 @@
       <label for="itemQuantity">Quantity</label>
       <input [(ngModel)]="neededItem.quantity" type="number" class="form-control" id="itemQuantity" placeholder="Enter item quantity" name="quantity" required>
     </div>
+    <span class="error"><small>{{errorMessage}}</small></span>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-success" (click)="sendNeededItem()">save</button>
