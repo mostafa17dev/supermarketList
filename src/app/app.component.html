@@ -20,14 +20,6 @@
                   <th scope="row">{{neededItem.name}}</th>
                   <td>{{neededItem.quantity}}</td>
                 </tr>
-                <tr >
-                  <th scope="row">Bread</th>
-                  <td>2</td>
-                </tr>
-                <tr>
-                  <th scope="row">Water</th>
-                  <td>3</td>
-                </tr>
               </tbody>
           </table>
           <button (click)="openNeededInputModal()">+</button>
@@ -46,14 +38,6 @@
                 <tr *ngFor="let boughtItem of boughtItems">
                   <th scope="row">{{boughtItem.name}}</th>
                   <td>{{boughtItem.totalPrice}}</td>
-                </tr>
-                <tr>
-                  <th scope="row">Toilet paper</th>
-                  <td>20</td>
-                </tr>
-                <tr >
-                  <th scope="row">3</th>
-                  <td>Larry</td>
                 </tr>
               </tbody>
             </table>
