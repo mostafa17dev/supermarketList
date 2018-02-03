@@ -26,3 +26,8 @@ header h1{
     width: 31px;
     height: 30px;
 }
+
+.dropHere{
+    width: 200%;
+    height: 50px;
+}
